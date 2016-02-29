@@ -1,0 +1,310 @@
+Some sites refernces:
+
+
+Block-Level Element								Inline Element
+Render to begin on new line(By Default)						Render on the same line (By Default)
+May Cotain Inline or other Block-level Element					May Only contain Inline Element
+Roughly traslet into a new HTML5 category of Flow Content			Roughly translet into a new HTML5 category of Phrasing Content
+<section>,<article> 								<nav> element is inline element
+						<a> is block-level Content Element 
+						and Inline Elemt
+						It's always good idea to define <title> attribute for <a> tag.
+
+Semantic Html element 
+The element which tells you something about the content.
+wheather it's little bit of description or wheather it's importance. 
+Basically hints to you to that meaning.
+May help search engine ranking.
+Help human to better understand the structure of the page.
+Help Computer to better understand the structure of the page
+
+
+List 
+It simply allows you to group related content.
+Text aren't allowed in UI tag without using LI tag.
+
+Istead of followig characters 
+< > &
+
+We ca use
+<    >     &
+&lt; &gt; &amp;
+
+&nbsp is very usefull for nonbreaking space.
+
+if you change the view selection in browser from default to any other 
+for example: use &quote for "
+
+Links
+If defined links are in a same directory then it's good to use title like "same dir link" or something.
+
+External link
+always defined with starting of https://
+
+Image
+ALways remeber to define width and height
+
+<html>
+<!-- CSS -->
+</html>
+
+csszengarden.com
+
+It's always good idea to define <title> attribute for <a> tag.
+
+Syntax of CSS rule
+Selector
+Declaration
+Property/Value Pair
+
+Element Selector 
+Let's clear this with an example:
+
+p{
+color: blue;
+}
+
+This will give blue color to every paragraph
+
+Class Selector
+
+.blue{
+color: blue;
+}
+
+<p class="blue">...</p>
+<p>..</p>
+<div class="blue">..<div>
+...
+
+ID selector
+
+#blue{
+color: blue;
+}
+
+<p class="blue">...</p>
+<p>..</p>
+<div id="blue">..<div>
+
+Grouping Selectors
+
+div, .blue{
+color: blue;
+}
+
+<p class="blue">...</p>
+<p>..</p>
+<div>..<div>
+
+So above will apply blue color to paragraph and every div in that file.
+
+p.big {
+	font-size: 20px;
+}
+
+<p class="big">....</p>
+<div class"big">..</p>
+
+text withing <p> will get font-size 20 while text withing div will not.
+
+Child Selector
+
+selector > selector 
+
+selector followed by another selector
+
+for an Example
+
+article > p
+{
+	color: blue;
+}
+
+<article>
+<p>...</p> ->text wil affect with above css
+</article>
+
+<p>...</p> -> text won't affect with above css
+
+<article>
+<div><p>..</p></div> -> text won't affect with above css
+</article>
+
+
+article p
+{
+	color: blue;
+}
+
+<article>
+<p>...</p> ->text wil affect with above css
+</article>
+
+<p>...</p> -> text will affect with above css
+
+<article>
+<div><p>..</p></div> -> text will affect with above css
+</article>
+
+css will apply to <p> with any level untill it's inside <article>
+
+
+
+.colored p {
+	color: blue;
+}
+
+Every p inside an element with class="colored"
+
+article > .colored {
+	color: blue;
+}
+
+Every element with class="colored" that is direct child of article element.
+	
+
+Pseudo classBest
+	
+	Link
+	Visited
+	hover
+	active
+	nth-child
+	
+Link:
+	Links arent easy to design like other elements.
+	Links have states that can be express using pseudo classes.
+	
+	for example:
+	a: link; 	a: visited;
+		|			|	
+	one state	second state
+	
+a:hover -> used to change color when hovering the mouse.
+a:active -> used to keep hover effect untill you release the click. -> important
+	
+Important element:nth-child
+	defied using below example.
+
+<header>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="http://goo.gl/V0Wl6s" target="_blank">AngularJS Course</a></li>
+    <li><a href="http://www.facebook.com/CourseraWebDev" target="_blank">Facebook Fan Page</a></li>
+  </ul>
+</header>
+	
+if you want to change anything related to facebook link which 3rd child of ul given above.
+	use-> header li:nth-child(3){
+				font-size: 40px;		
+		  }
+
+You can use odd and even with nth-child as well
+	for example: nth-child(odd)
+				 nth-child(even)
+	
+
+Style Placement
+	
+	you can also apply style directly inside the tag using style="text-align: centre;"
+	
+for external stylesheet 
+	<link href:"style.css">
+	
+
+	
+Some Rule
+	
+	origin
+	merge
+	inheritance
+	spcificity
+
+merge:
+	define some css in external link and define some css in same html file. if defined css within same html file will
+	overide external css if it's same and remained effects of external css will be the same.
+	
+Inheritance
+
+Specificity -> important
+	style""		ID			class,pseudo class,attibute			# of Elements
+	
+so it's totaly depends on above ranking which css will apply. 
+	
+Important example of specificity
+	
+header.navigation p {
+  color: blue;
+}
+p.blurb {
+  color: red;
+}
+p {
+  color: green !important;  -> what ever the score will be counted if css is applied withing this type of specific tag then that will apply first
+}								although the score of p is 1 which is less then both of above defined css 12 and 11 respectively. 
+	
+Styling text
+	For text style always try to use "font-family" as you can't not rely on what kind of browser client is using.
+	For color #0000ff;
+			   R G B
+	Font-weight is alsow useful you can give range from 100 ... 900 .. bold. It's very useful for font thickness.
+
+Important
+
+<style>	
+body {
+  font-size: 120%;
+}
+</style>
+</head>
+<body>
+<div>Regular text</div>
+<div style="font-size: 2em;">2em text
+  <div style="font-size: 2em;">4em text
+    <div style="font-size: .5em;">2em again!</div>
+  </div>
+</div>
+</body>
+	 
+	
+Here in above example you can see that for inner font-size we have use "em" which is basically used for the font unit.
+	2em used in second div basically double the size of "2em text" based on Regular text used in first div.
+	Same way 4em text will be double based on "2em text".
+	While "2em again" will be same as "2em text" as we have used font-size: .5em.
+	
+The Box Model
+
+Some times it's better to give padding: 0px and Margin: 0px
+Because sometime browser by default sets some margin, so you will see some space at the beginning and ending of the sentence. 
+
+	
+Important notes
+
+Once you will define width for box for an example:
+
+#box {
+ background-color: blue;
+ padding: 10px;
+ border: 5px solid black;
+ margin: 40px;
+ width: 300px;
+
+}
+
+The width of the original box won't be the 300px, it will be 330 which is equal to width + 2 sides border + 2 sides padding.
+So because of this reason css3 has given a new feature “box-sizing: border-box” which will give total 300px width to the box.
+See example below:
+
+#box {
+
+ background-color: blue;
+ padding: 10px;
+ border: 5px solid black;
+ margin: 40px;
+ width: 300px;
+ box-sizing: border-box
+
+}
+
+	

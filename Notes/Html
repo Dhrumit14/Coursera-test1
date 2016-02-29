@@ -1,0 +1,56 @@
+Some sites refernces:
+
+
+Block-Level Element								Inline Element
+Render to begin on new line(By Default)						Render on the same line (By Default)
+May Cotain Inline or other Block-level Element					May Only contain Inline Element
+Roughly traslet into a new HTML5 category of Flow Content			Roughly translet into a new HTML5 category of Phrasing Content
+<section>,<article> 								<nav> element is inline element
+						<a> is block-level Content Element 
+						and Inline Elemt
+						It's always good idea to define <title> attribute for <a> tag.
+
+Semantic Html element 
+The element which tells you something about the content.
+wheather it's little bit of description or wheather it's importance. 
+Basically hints to you to that meaning.
+May help search engine ranking.
+Help human to better understand the structure of the page.
+Help Computer to better understand the structure of the page
+
+
+List 
+It simply allows you to group related content.
+Text aren't allowed in UI tag without using LI tag.
+
+Istead of followig characters 
+< > &
+
+We ca use
+<    >     &
+&lt; &gt; &amp;
+
+&nbsp is very usefull for nonbreaking space.
+
+if you change the view selection in browser from default to any other 
+for example: use &quote for "
+
+Links
+If defined links are in a same directory then it's good to use title like "same dir link" or something.
+
+External link
+always defined with starting of https://
+
+Image
+ALways remeber to define width and height
+
+CSS
+
+csszengarden.com
+
+It's always good idea to define <title> attribute for <a> tag.
+
+Syntax of CSS rule
+Selector
+Declaration
+Property/Value Pair
